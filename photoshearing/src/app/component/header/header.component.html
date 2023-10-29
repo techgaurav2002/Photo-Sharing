@@ -1,0 +1,19 @@
+<div class="header">
+    <div class="wrapper">
+        <div class="logo"><a href="#"><img src="assets/logo.png" alt=""></a></div>
+        <div class="right_side">
+            <ul>
+                <li *ngIf="token"><a style="cursor: pointer;" (click)="logout()">Logout</a></li>
+               <li *ngIf="token">{{email}}</li>
+                
+            </ul>
+        </div>
+        <div class="nav_top">
+            <ul>
+             <li [ngClass]="{'active':active == 1}" (click)="profile(1)"><a>Dashboard</a></li>
+             <li [ngClass]="{'active':active == 2}" (click)="myalbum(2)"><a>Album</a></li>
+             <li [ngClass]="{'active':active == 3}" (click)="sheardAlbum(3)"><a>Shared Album</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="right_side_content">
+    <h1>{{imageDetail.filename}}</h1>
+    <div class="list-content">
+        <div class="flex">
+        <div (click)="leftClick()" class="arrow left-arrow">
+            <span>&#9664;</span> 
+        </div>
+        <div class="form-left">
+            <div class="form">
+                <!-- Your form content here -->
+            </div>
+        </div>
+        <img src="http://localhost:3000/public/uploads/{{imageDetail.filename}}" alt="image">
+        <div (click)="rightClick()" class="arrow right-arrow">
+            <span>&#9654;</span> 
+        </div>
+</div>
+</div>

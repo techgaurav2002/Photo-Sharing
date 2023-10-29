@@ -1,0 +1,13 @@
+<mat-card>
+<mat-card-header>
+    <mat-card-title>Add Album</mat-card-title>
+</mat-card-header>
+<form [formGroup] = "albumForm">
+<mat-card-content>
+<mat-form-field>
+    <input matInput formControlName="name" placeholder="Album Name">
+  </mat-form-field>
+</mat-card-content>
+  <button mat-button color="accent" (click)="addAlbum()">Add Album</button>
+</form>
+</mat-card>

@@ -1,0 +1,63 @@
+<div class="right_side_content">
+    <h1>{{albumName}}</h1>
+    <div class="list-contet">
+        <div class="form-left">
+            <div class="form">
+                <form role="form">
+                    <label>Sort By:</label>
+                    <div class="select">
+                        <select name="sortBy" [(ngModel)]="sortBy" (change)="sort()">
+                            <option value="">Name</option>
+                            <option value="createdAt">Last Added</option>
+                        </select>
+                    </div>
+                    <input type="text" class="search-box search-upper" placeholder="Search.." name="searchText" [(ngModel)]="searchText" (input)="search()" />
+                </form>
+            </div>
+            <input *ngIf="approval == 1" type="button" class="submit-btn add-user" (click)="addImage()" value="Add Images">
+        </div>
+        <table width="100%" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th width="10px">S.No</th>
+                    <th width="100px">Image</th>
+                    <th width="100px">Name</th>
+                    <th width="98px"> Uploded by</th>
+                    <th width="100px">Uploded On</th>
+                    <th width="113px"> Updated On</th>
+                    <th width="126px">Action</th>
+
+                </tr>
+                <tr *ngFor="let image of images">
+                
+                    <td>{{image.id}}</td>
+                    <td><a (click)="openImagePreview(image.id,image.AlbumId)"><img class="setImage" src="http://localhost:3000/public/uploads/{{image.filename}}" alt=""></a></td>
+                    <td>{{image.filename}}</td>
+                    <td>{{image.User.firstName}}</td>
+                    <td>{{image.createdAt}}</td>
+                    <td>{{image.updatedAt}}</td>
+                    <td>
+                        <!-- <a><img src="assets/edit-icon.png" alt=""></a> -->
+                        <a><img style="margin-left: 4px;" src="assets/cross.png" (click)="deleteImage(image.id,image.UserId)" alt=""></a>
+                    </td>
+
+
+                </tr>
+                
+            </tbody>
+        </table>
+        <div class="paginaton-div">
+            <ul>
+                <li><a (click)="prevPage()">Prev</a></li>
+                <li *ngFor="let page of totalPagesArray">
+                    <a [ngClass]="{'active': currentPage === page}" (click)="goToPage(page)">{{ page }}</a>
+                </li>
+                <li><a (click)="nextPage()">Next</a></li>
+                
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>

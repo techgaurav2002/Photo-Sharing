@@ -1,0 +1,46 @@
+
+<div class="login_section">
+  <div class="wrapper relative">
+    <div style="display:none" class="meassage_successful_login">You have Successfull Edit </div>
+    <div class="heading-top">
+      <div class="logo-cebter"><a href="#"><img src="assets/at your service_banner.png"></a></div>
+    </div>
+    <div class="box">
+      <div class="outer_div">
+
+        <h2>User <span>Login</span></h2>
+
+        <form class="margin_bottom" style="margin-top: 10px;" [formGroup]="loginForm" (ngSubmit)="loginUser()" role="form">
+          <mat-form-field appearance="fill" class="form-group">
+            <mat-label class="label" for="exampleInputEmail1">Email</mat-label>
+            <input matInput type="email" id="exampleInputEmail1" formControlName="email" class="form-control">
+            <mat-hint class="errormsg" *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
+              *Email is required.
+            </mat-hint>
+            <mat-hint class="errormsg" *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">
+              *Invalid email format.
+            </mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="form-group">
+            <mat-label for="exampleInputPassword1">Password</mat-label>
+            <input matInput type="password" id="exampleInputPassword1" formControlName="password" class="form-control">
+            <mat-hint class="errormsg" *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+              *Password is required.
+            </mat-hint>
+            <mat-hint class="errormsg" *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched">
+              *Password size at least 6 characters.
+            </mat-hint>
+          </mat-form-field>
+          <div class="forgot-password-link">
+          <button type="submit" [disabled]="loginForm.invalid" class="btn_login">Login</button>
+          <a (click)="forgotPassword()">Forgotten Password?</a>
+        </div>
+        
+          
+        </form>
+        <!-- <button style="font-family: OpenSansSemibold;" class="registerbtn" (click)="signupPage()" mat-raised-button color="accent" >Create new account</button> -->
+        <button class="registerbtn" (click)="signupPage()">Create new account</button>
+      </div>
+    </div>
+  </div>
+</div>

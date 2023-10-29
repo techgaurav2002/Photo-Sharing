@@ -1,0 +1,94 @@
+<div class="right_side_content">
+    <h1>My Album</h1>
+     <!-- {{searchText | json}} -->
+     <!-- {{sortBy | json}} -->
+    <div class="list-contet">
+        <div class="form-left">
+            <div class="form">
+                <form role="form">
+                    <label>Sort By:</label>
+                    <div class="select">
+                        <select name="sortBy" [(ngModel)]="sortBy" (change)="sort()">
+                            <option value="">Select</option>
+                            <option value="name">Name</option>
+                            <option value="createdAt">Date Created</option>
+                            <option value="updatedAt">Date Modified</option>
+                        </select>
+                    </div>
+                    <input type="text" class="search-box search-upper" placeholder="Search.." name="searchText" [(ngModel)]="searchText" (input)="search()" />
+                </form>
+            </div>
+            <input type="button"  (click)="openAddAlbumDialog2()" class="submit-btn add-user"   value="Add Album">
+            
+        </div>
+        <table width="100%" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th width="10px">S.No</th>
+                    <th width="126px">Name</th>
+                    <th width="98px"> Created by</th>
+                    <th width="100px">Created On</th>
+                    <th width="113px"> Updated On</th>
+                    <th width="100px">Action</th>
+
+                </tr>
+                <tr *ngFor="let album of albums" >
+                    <td (click)="getid(album.id)">{{album.id}}</td>
+                    <td (click)="getid(album.id)"> <img class="albumSize" src="assets/albums.png"> {{album.name}}</td>
+                    <td (click)="getid(album.id)">{{album.User.firstName}}</td>
+                    <td (click)="getid(album.id)">{{album.createdAt}}</td>
+                    <td (click)="getid(album.id)">{{album.updatedAt}}</td>
+                    <td>
+                        <!-- <a>
+                            <img src="assets/edit-icon.png" alt="Edit">
+                        </a> -->
+                        <a  (click)="deleteAlbum(album.id)">
+                            <img src="assets/cross.png" alt="Edit">
+                        </a>
+                        <a style="padding: 0px 11px"(click)="openAddAlbumDialog(album.id)">
+                            <img style="height: 15px; " src="assets/setting.png" alt="">
+                        </a>
+                        <a (click)="openSheardPopup(album.id)" >
+                            <img class="size" src="assets/share3.png" alt="Edit">
+                        </a>
+                      
+
+
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="paginaton-div">
+            <ul>
+                <li><a (click)="prevPage()">Prev</a></li>
+                <li *ngFor="let page of totalPagesArray">
+                    <a [ngClass]="{'active': currentPage === page}" (click)="goToPage(page)">{{ page }}</a>
+                </li>
+                <li><a (click)="nextPage()">Next</a></li>
+                
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+
+
+  <!-- <button mat-button [matMenuTriggerFor]="dropdown"  class="menu-button"><img style="height: 15px;"
+                                src="assets/setting.png"></button>
+                        <mat-menu #dropdown="matMenu" class="main-menu">
+                            <button mat-menu-item class="menu-item"><img src="assets/edit-icon.png" class="menu-icon"> Edit</button>
+                            <button mat-menu-item class="menu-item"><img src="assets/cross.png" class="menu-icon"> Delete</button>
+                            <button mat-menu-item class="menu-item" [matMenuTriggerFor]="setting"><img style="height: 15px;"
+                                    src="assets/setting.png" class="menu-icon"> Setting</button>
+                        </mat-menu>
+
+                        <mat-menu #setting="matMenu" class="submenu">
+                            <form #checkboxForm="ngForm" (ngSubmit)="submitForm(checkboxForm)" class="form">
+                                <mat-checkbox [(ngModel)]="approved" name="approved" class="checkbox">Approved</mat-checkbox>
+                                <mat-checkbox [(ngModel)]="isPublic" name="isPublic" class="checkbox">Is Public</mat-checkbox>
+                                <button mat-button type="submit" class="submit-button">Submit</button>
+                            </form>
+                        </mat-menu> -->

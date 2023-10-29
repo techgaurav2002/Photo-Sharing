@@ -1,0 +1,77 @@
+<div class="right_side_content">
+    <h1>Shared History</h1>
+    <div class="list-contet">
+        <div class="form-left">
+            <div class="form">
+                <form role="form">
+                    <label>Sort By:</label>
+                    <div class="select">
+                        <select name="sortBy" [(ngModel)]="sortBy" (change)="sort()">
+                            <option value="">Last Shared</option>
+                            <option value="createdAt">Date</option>
+                            <option value="email">Email</option>
+                            
+                        </select>
+                    </div>
+                    <input type="text" class="search-box search-upper" placeholder="Search.." name="searchText" [(ngModel)]="searchText" (input)="search()" />
+                </form>
+            </div>
+            <!-- <input type="button" class="submit-btn add-user" value="Add More Users"> -->
+        </div>
+        <table width="100%" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th width="10px">S.No</th>
+                    <th width="140px">Name</th>
+                    <th width="98px"> Shared To</th>
+                    <th width="98px">sheard On</th>
+                    <th width="100px">Created On</th>
+                    <th width="50px">Approval</th>
+
+                </tr>
+                <tr *ngFor="let album of albums">
+                    <td>{{album.id}}</td>
+                    <td> <a ><img class="albumSize" src="assets/albums.png"></a>{{album.Album.name}}</td>
+                    <td>{{album.email}}</td>
+                    <td>{{album.createdAt}}</td>
+                    <td>{{album.Album.createdAt}}</td>
+                    <td>
+                        <img *ngIf="album.Album.Settings[0].approval == 1" src="assets/success-msg.png" alt="Edit">
+                        <img *ngIf="album.Album.Settings[0].approval == 0" src="assets/unsucess-msg.png" alt="Edit">
+                </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <div class="paginaton-div">
+            <ul>
+                <li><a (click)="prevPage()">Prev</a></li>
+                <li *ngFor="let page of totalPagesArray">
+                    <a [ngClass]="{'active': currentPage === page}" (click)="goToPage(page)">{{ page }}</a>
+                </li>
+                <li><a (click)="nextPage()">Next</a></li>
+                
+
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+  <!-- <button mat-button [matMenuTriggerFor]="dropdown"  class="menu-button"><img style="height: 15px;"
+                                src="assets/setting.png"></button>
+                        <mat-menu #dropdown="matMenu" class="main-menu">
+                            <button mat-menu-item class="menu-item"><img src="assets/edit-icon.png" class="menu-icon"> Edit</button>
+                            <button mat-menu-item class="menu-item"><img src="assets/cross.png" class="menu-icon"> Delete</button>
+                            <button mat-menu-item class="menu-item" [matMenuTriggerFor]="setting"><img style="height: 15px;"
+                                    src="assets/setting.png" class="menu-icon"> Setting</button>
+                        </mat-menu>
+
+                        <mat-menu #setting="matMenu" class="submenu">
+                            <form #checkboxForm="ngForm" (ngSubmit)="submitForm(checkboxForm)" class="form">
+                                <mat-checkbox [(ngModel)]="approved" name="approved" class="checkbox">Approved</mat-checkbox>
+                                <mat-checkbox [(ngModel)]="isPublic" name="isPublic" class="checkbox">Is Public</mat-checkbox>
+                                <button mat-button type="submit" class="submit-button">Submit</button>
+                            </form>
+                        </mat-menu> -->

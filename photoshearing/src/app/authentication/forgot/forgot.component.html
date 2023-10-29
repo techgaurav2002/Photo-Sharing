@@ -1,0 +1,72 @@
+<!-- <mat-toolbar color="primary" class="app-header">
+    <div><a href="https://www.positronx.io" target="_blank" class="positronx">Photo Shearing</a></div>
+    <span class="nav-tool-items">
+      <a mat-button  routerLinkActive="active">Log in</a>
+      <a mat-button  routerLink="" routerLinkActive="active">Register</a>
+    </span>
+  </mat-toolbar>
+  <div class="login_section" fxLayout="row" fxLayoutAlign="center center">
+    <div class="wrapper relative">
+      <div class="heading-top">
+        <div class="logo-cebter">
+          <a href="#"><img src="assets/at your service_banner.png"></a>
+        </div>
+      </div>
+      <mat-card class="box">
+        <div class="outer_div">
+          <mat-card-header>
+            <mat-card-title><h2>Forgot <span>Password</span></h2></mat-card-title>
+          </mat-card-header>
+          <form [formGroup]="forgotForm" (ngSubmit)="forgotLink()">
+            <mat-card-content>
+              <mat-form-field class="form-group">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="" formControlName="email">
+                <mat-hint class="errormsg" *ngIf="forgotForm.get('email')?.hasError('required') && forgotForm.get('email')?.touched">
+                  *Email is required.
+                </mat-hint>
+                <mat-hint class="errormsg" *ngIf="forgotForm.get('email')?.hasError('email') && forgotForm.get('email')?.touched">
+                  *Invalid email format.
+                </mat-hint>
+              </mat-form-field>
+            </mat-card-content>
+            <button class="btn_login">Reset Link</button>
+          </form>
+         
+        </div>
+      </mat-card>
+    </div>
+  </div> -->
+
+  <div class="login_section">
+    <div class="wrapper relative">
+      <div style="display:none" class="meassage_successful_login">You have Successfull Edit </div>
+      <div class="heading-top">
+        <div class="logo-cebter"><a href="#"><img src="assets/at your service_banner.png"></a></div>
+      </div>
+      <div class="box2">
+        <div class="outer_div">
+  
+          <h2>Forgot <span>Password</span></h2>
+  
+          <form class="margin_bottom" style="margin-top: 10px;" [formGroup]="forgotForm" (ngSubmit)="forgotLink()" role="form">
+            <mat-form-field appearance="fill" class="form-group">
+              <mat-label class="label" for="exampleInputEmail1">Email</mat-label>
+              <input matInput type="email" id="exampleInputEmail1" formControlName="email" class="form-control">
+              <mat-hint class="errormsg" *ngIf="forgotForm.get('email')?.hasError('required') && forgotForm.get('email')?.touched">
+                *Email is required.
+              </mat-hint>
+              <mat-hint class="errormsg" *ngIf="forgotForm.get('email')?.hasError('email') && forgotForm.get('email')?.touched">
+                *Invalid email format.
+              </mat-hint>
+            </mat-form-field>
+            <div class="forgot-password-link">
+            <button type="submit" [disabled]="forgotForm.invalid" class="btn_login">Rest Link</button>
+          </div>
+          
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,14 @@
+<form [formGroup]="settingForm" (ngSubmit)="updateSetting(albumid)">
+    <fieldset>
+        <legend>Choose your Settings</legend>
+        <div class="form__group">
+            <input type="checkbox" id="approved"  value="1" formControlName="approval" name="berries">
+            <label for="approved">Approved</label>
+        </div>
+        <div class="form__group">
+            <input type="checkbox" id="isPublic" value="1" formControlName="ispublic" name="berries">
+            <label for="isPublic">Is Public</label>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn_login">Submit</button>
+    </form>

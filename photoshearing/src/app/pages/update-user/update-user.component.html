@@ -1,0 +1,77 @@
+<p>edit Profile work</p>
+<!-- <mat-slide-toggle>Toggle me!</mat-slide-toggle> -->
+
+<div class="right_side_content">
+	<h1>Edit Profile</h1>
+
+    
+	<div class="list-contet">
+			<form [formGroup]="updateForm" (ngSubmit)="userUpdate($event)">
+			
+			<div class="form-row">
+				<div class="form-label">
+					<label>first Name : <span>*</span></label> 
+				</div>
+				<div class="input-field" id="name">
+					<input type="text" class="search-box" name="firstName" formControlName="firstName" placeholder="Enter first name"/>
+                    <p class="error-ms"></p>
+				</div>
+			</div>
+
+            <div class="form-row">
+				<div class="form-label">
+					<label>Last Name : <span>*</span></label> 
+				</div>
+				<div class="input-field" id="name">
+					<input type="text" class="search-box" name="lastName" formControlName="lastName" placeholder="Enter last name"/>
+                    <p class="error-ms"></p>
+				</div>
+			</div>
+            <div class="form-row">
+				<div class="form-label">
+					<label>Address : <span>*</span></label> 
+				</div>
+				<div class="input-field" id="name">
+					<input type="text" class="search-box" name="address" formControlName="address" placeholder="Enter address"/>
+                    <p class="error-ms"></p>
+				</div>
+			</div>
+            <div class="form-row">
+				<div class="form-label">
+					<label>Phone no : <span>*</span></label> 
+				</div>
+				<div class="input-field" id="name">
+					<input type="text" class="search-box" name="phone" formControlName="phone" placeholder="Enter address"/>
+                    <p class="error-ms"></p>
+				</div>
+			</div>
+            <div class="form-row">
+				<div class="form-label">
+					<label>Add Image: <span>*</span></label> 
+				</div>
+				<div class="input-field search-box" id="image">
+                <input  type="file" name="filename" formControlName="filename"  id="image" />
+                <p class="error-ms"></p>
+				</div>
+
+                
+               
+			</div>
+            
+			
+			
+           
+                        
+			<div class="form-row">
+				<div class="form-label">
+					<label><span></span> </label> 
+				</div>
+				<div class="input-field">
+					<input type="submit" name="add" class="submit-btn" value="Update">
+				</div>
+			</div>
+
+		</form>	
+	</div>
+	</div>
+

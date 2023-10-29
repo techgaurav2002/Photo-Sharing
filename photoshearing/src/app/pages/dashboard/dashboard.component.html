@@ -1,0 +1,94 @@
+
+
+
+    
+    <div class="right_side_content">
+        <h1>Dashboard</h1>
+        <div class="list-contet">
+        <div class="form-left">
+            <!-- <a href="/admin/update" class="submit-btn add-user">Add Product</a> -->
+            <input  type="button"  class="submit-btn add-user" (click)="clicked()"  value="Edit Profile">
+        </div>
+
+        <div class="card">
+            <h1>User Profile</h1>
+            <div class="main_div">
+            <div class="first">
+                <img class="profileimg" src="http://localhost:3000/{{user.filename}}" alt="image">
+            </div>
+            <div class="second">
+                <div>
+                <p class="mb-0"><strong class="ml-20">Name:</strong>{{user.firstName}} {{user.lastName}}</p>
+                <p class="mb-0"><strong class="ml-20">Email:</strong>{{user.email}}</p>
+                <p class="mb-0"><strong class="ml-20">Address:</strong>{{user.address}}</p>
+                <p class="mb-0"><strong class="ml-20">Phone no:</strong>{{user.phone}}</p>
+            </div>
+            </div>
+            </div>
+         </div>
+
+
+<!-- <div class="card">
+    <span>User Profile</span>
+   <img src="http://localhost:3000/{{user.filename}}" alt="image">
+   <h1>{{user.firstName}} {{user.lastName}}</h1>
+   <p class="title">Email - {{user.email}}</p>
+   <p class="title">Address - {{user.address}}</p>
+   <p class="title">Phone no- {{user.phone}}</p>
+ </div> -->
+ <div class="album">
+    <div class="d-flex shadow">
+        <div class="avatar flex-shrink-0 me-3">
+          <img src="/assets/totalAlbum.png" alt="User" />
+        </div>
+        <div>
+          <small class="text-muted txtcolor d-block">Total Albums</small>
+          <div class="d-flex text-success align-items-center">
+            <h4 class="mb-0 me-1">{{aCount}}</h4>
+          </div>
+        </div>
+      </div>
+
+    
+     <!-- <div (click)="openAddAlbumDialog()">
+        <img class="imgclass" src="assets/albums.png" alt="album">
+        <p class="title">Add Album</p>
+     </div> -->
+
+
+     <div (click)="openAddAlbumDialog()" class="d-flex shadow">
+      <div class="avatar flex-shrink-0 me-3">
+        
+        <img src="/assets/addAlbum2.png" alt="User" />
+      </div>
+      <div>
+        <h5 style="margin-top: 9px;" class="text-muted txtcolor d-block">Add Albums</h5>
+      </div>
+    </div>
+
+
+     <div (click)="sheardHistory()" class="d-flex shadow">
+        <div class="avatar flex-shrink-0 me-3">
+          <img src="/assets/shear2.png" alt="User" />
+        </div>
+        <div>
+          <small class="text-muted txtcolor d-block">Sheard Album</small>
+          <div class="d-flex text-success align-items-center">
+            <h4 class="mb-0 me-1">{{count}}</h4>
+          </div>
+        </div>
+      </div>
+ </div>
+         
+        
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+

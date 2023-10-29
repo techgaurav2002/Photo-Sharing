@@ -1,0 +1,28 @@
+<div class="right_side_content">
+    <h1>Add Image</h1>
+    <div class="list-contet">
+        <div class="form-left">
+
+            <!-- <input type="button" class="submit-btn add-user" (click)="addImage()" value="Add Images"> -->
+        </div>
+
+        <div class="image-upload-container">
+            <form [formGroup]="imageForm">
+              <label for="file-input" class="upload-label">Choose Images</label>
+              <input type="file" id="file-input" class="upload-input" (change)="onFileSelected($event)" multiple formControlName="images">
+              <div *ngIf="imagePreviews.length > 0" class="image-preview-container">
+                <div *ngFor="let preview of imagePreviews; let i = index" class="image-container">
+                  <img [src]="preview.url" alt="Preview" class="image-preview">
+                  <button class="cancel-button" (click)="cancelImage(i)"><img src="assets/cross.png" alt=""></button>
+                </div>
+              </div>
+             
+            </form>
+           
+          </div>
+          <button class="upload-button" type="submit" [disabled]="imageForm.invalid || imagePreviews.length === 0" (click)="uploadImages()">Upload</button>
+          
+
+    </div>
+</div> 
+

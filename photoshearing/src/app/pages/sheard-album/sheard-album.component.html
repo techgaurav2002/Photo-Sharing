@@ -1,0 +1,58 @@
+<div class="right_side_content">
+    <h1>Shared Album</h1>
+    <div class="list-contet">
+        <div class="form-left">
+            <div class="form">
+                <form role="form">
+                    <label>Sort By:</label>
+                    <div class="select">
+                        <select name="sortBy" [(ngModel)]="sortBy" (change)="sort()">
+                            <option value="">Select</option>
+                            <option value="createdAt">Date</option>
+                            
+                        </select>
+                    </div>
+                    <input type="text" class="search-box search-upper" placeholder="Search.." name="searchText" [(ngModel)]="searchText" (input)="search()" />
+                </form>
+            </div>
+            <!-- <input type="button" class="submit-btn add-user" value="Add More Users"> -->
+        </div>
+        <table width="100%" cellspacing="0">
+            <tbody>
+                <tr>
+                    <th width="10px">S.No</th>
+                    <th width="126px">Name</th>
+                    <th width="100px"> Shared by</th>
+                    <th width="126px">Shared On</th>
+                    <th width="126px"> Updated On</th>
+                    <th width="70px">Approval</th>
+
+                </tr>
+                <tr *ngFor="let album of albums" >
+                    <td (click)="getid(album.AlbumId)">{{album.id}}</td>
+                    <td (click)="getid(album.AlbumId)"> <img class="albumSize" src="assets/albums.png">{{album.Album.name}}</td>
+                    <td (click)="getid(album.AlbumId)">{{album.User.firstName}}</td>
+                    <td (click)="getid(album.AlbumId)">{{album.createdAt}}</td>
+                    <td (click)="getid(album.AlbumId)">{{album.Album.updatedAt}}</td>
+                    <td (click)="getid(album.AlbumId)">
+                        <img *ngIf="album.Album.Settings[0].approval == 1" src="assets/success-msg.png" alt="Edit">
+                        <img *ngIf="album.Album.Settings[0].approval == 0" src="assets/unsucess-msg.png" alt="Edit">
+                </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="paginaton-div">
+            <ul>
+                <li><a (click)="prevPage()">Prev</a></li>
+                <li *ngFor="let page of totalPagesArray">
+                    <a [ngClass]="{'active': currentPage === page}" (click)="goToPage(page)">{{ page }}</a>
+                </li>
+                <li><a (click)="nextPage()">Next</a></li>
+                
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>

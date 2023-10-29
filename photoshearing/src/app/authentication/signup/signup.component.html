@@ -1,0 +1,194 @@
+
+<!-- <div class="header">
+  <div class="wrapper">
+    <div class="logo"><a href="#"><img src="assets/logo.png" alt=""></a></div>
+    <div class="right_side">
+      <ul>
+        <li (click)="loginpage()">Login</li>
+        <li>Welcome User</li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="wrapper">
+    <div class="right_side_content2">
+      <h1>SignUp</h1>
+
+
+      <div class="list-contet">
+        <form class="form-edit" [formGroup] = "signupForm" (ngSubmit)="formSubmit()">
+          <mat-card-content>
+            <mat-form-field class="form-group">
+              <mat-label>First name</mat-label>
+              <input matInput formControlName="firstName" placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('firstName')?.hasError('required') && signupForm.get('firstName')?.touched">
+                *First Name is required.
+              </mat-hint>
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Last name</mat-label>
+              <input matInput formControlName="lastName" placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('lastName')?.hasError('required') && signupForm.get('lastName')?.touched">
+                *Last Name is required.
+              </mat-hint>
+              
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput formControlName="email" placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('email')?.hasError('required') && signupForm.get('email')?.touched">
+                Email is required.
+              </mat-hint>
+             
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Address</mat-label>
+              <input type="text" matInput formControlName="address" placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('address')?.hasError('required') && signupForm.get('address')?.touched">
+                Address is required.
+              </mat-hint>
+              
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Password</mat-label>
+              <input type="password" formControlName="password" matInput placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched">
+                *Password is required.
+              </mat-hint>
+              <mat-hint class="errormsg" *ngIf="signupForm.get('password')?.hasError('minlength') && signupForm.get('password')?.touched">
+                *Password must be at least 6 characters long.
+              </mat-hint>
+             
+            
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Confirm password</mat-label>
+              <input type="password" matInput formControlName="confirmPassword"  placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('confirmPassword')?.hasError('passwordMismatch') && signupForm.get('confirmPassword')?.touched">
+                *Passwords do not match.
+              </mat-hint>
+              
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Phone</mat-label>
+              <input type="text" formControlName="phone" matInput placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('phone')?.hasError('required') && signupForm.get('phone')?.touched">
+                *Phone is required.
+              </mat-hint>
+              <mat-hint class="errormsg" *ngIf="signupForm.get('phone')?.hasError('pattern') && signupForm.get('phone')?.touched">
+                *Invalid phone number format.
+              </mat-hint>
+              
+            </mat-form-field>
+          </mat-card-content>
+          <button  [disabled]="signupForm.invalid" class="btn_login">submit</button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="header">
+  <div class="wrapper">
+    <div class="logo"><a href="#"><img src="assets/logo.png" alt=""></a></div>
+    <div class="right_side">
+      <ul>
+        <li (click)="loginpage()">Login</li>
+        <li>Welcome User</li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="login_section">
+  <div class="wrapper relative">
+    <div class="heading-top">
+      <div class="logo-cebter"><a href="#"><img src="assets/at your service_banner.png"></a></div>
+    </div>
+<div class="boxsignup">
+  <div class="outer_div">
+
+    <h2>User <span>SignUp</span></h2>
+      <div class="list-contet">
+        <form class="form-edit" [formGroup] = "signupForm" (ngSubmit)="formSubmit()">
+          <mat-card-content>
+            <mat-form-field class="form-group">
+              <mat-label>First name</mat-label>
+              <input matInput formControlName="firstName" placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('firstName')?.hasError('required') && signupForm.get('firstName')?.touched">
+                *First Name is required.
+              </mat-hint>
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Last name</mat-label>
+              <input matInput formControlName="lastName" placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('lastName')?.hasError('required') && signupForm.get('lastName')?.touched">
+                *Last Name is required.
+              </mat-hint>
+              
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput formControlName="email" placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('email')?.hasError('required') && signupForm.get('email')?.touched">
+                Email is required.
+              </mat-hint>
+             
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Address</mat-label>
+              <input type="text" matInput formControlName="address" placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('address')?.hasError('required') && signupForm.get('address')?.touched">
+                Address is required.
+              </mat-hint>
+              
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Password</mat-label>
+              <input type="password" formControlName="password" matInput placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched">
+                *Password is required.
+              </mat-hint>
+              <mat-hint class="errormsg" *ngIf="signupForm.get('password')?.hasError('minlength') && signupForm.get('password')?.touched">
+                *Password must be at least 6 characters long.
+              </mat-hint>
+             
+            
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Confirm password</mat-label>
+              <input type="password" matInput formControlName="confirmPassword"  placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('confirmPassword')?.hasError('passwordMismatch') && signupForm.get('confirmPassword')?.touched">
+                *Passwords do not match.
+              </mat-hint>
+              
+            </mat-form-field>
+            <mat-form-field class="form-group">
+              <mat-label>Phone</mat-label>
+              <input type="text" formControlName="phone" matInput placeholder="">
+              <mat-hint class="errormsg" *ngIf="signupForm.get('phone')?.hasError('required') && signupForm.get('phone')?.touched">
+                *Phone is required.
+              </mat-hint>
+              <mat-hint class="errormsg" *ngIf="signupForm.get('phone')?.hasError('pattern') && signupForm.get('phone')?.touched">
+                *Invalid phone number format.
+              </mat-hint>
+              
+            </mat-form-field>
+          </mat-card-content>
+          <button  [disabled]="signupForm.invalid" class="btn_login">submit</button>
+          
+        </form>
+      </div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+  <div class="wrapper">
+  <p>Copyright © 2014 yourwebsite.com. All rights reserved</p>
+  </div>
+  
+  </div>
+   

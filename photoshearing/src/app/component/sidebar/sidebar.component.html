@@ -1,0 +1,46 @@
+
+    <div *ngIf="Url == 1" class="bedcram">
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li>Profile</li>
+        </ul>
+    </div>
+    <div *ngIf="Url == 2" class="bedcram">
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li>My Album</li>
+        </ul>
+    </div>
+    <div *ngIf="Url == 3" class="bedcram">
+        <ul>
+        <li><a href="#">Home</a></li>
+        <li>Shared Album</li>
+        </ul>
+    </div>
+
+    <div class="left_sidebr">
+        <ul>
+        <li><a class="user">Dashboard</a>
+        <ul class="submenu">
+        <li (click)="profile(1)"> <a >Profile </a></li>
+        
+        </ul>
+    
+        </li>
+        <li><a  class="Setting">Album</a>
+        <ul class="submenu">
+        <li (click)="myalbum(2)"><a >My Album </a></li>
+        <li (click)="sheardAlbum(3)"><a>Sheard Album </a></li>
+        <!-- <li><a href="#">Manage Login Page</a></li> -->
+    
+        </ul>
+        
+        </li>
+        
+    
+        
+        </ul>
+        </div>
+
+
+
